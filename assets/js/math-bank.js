@@ -64,7 +64,7 @@ window.MATH_BANK = {
         ["Kho có 407 kg gạo. Người ta nhập thêm 1 bao 90 kg. Số biểu thị lượng gạo sau khi nhập là:",["497 kg","4970 kg","490 kg","417 kg"],0,"407 + 90 = 497 kg. Đây là tình huống vận dụng đọc và cấu tạo số.","VD"],
         ["Trên bảng có các số 608, 680, 806, 860. Số lớn thứ hai là:",["608","680","806","860"],2,"Thứ tự từ lớn đến bé: 860, 806, 680, 608. Số lớn thứ hai là 806.","VD"],
         ["Một số có ba chữ số, chữ số hàng trăm là 7, chữ số hàng đơn vị là 0, chữ số hàng chục lớn hơn 2 và nhỏ hơn 4. Số đó là:",["720","730","740","703"],1,"Chữ số hàng chục phải là 3; số cần tìm là 730.","VD"],
-        ["Số nào khi làm tròn đến hàng chục sẽ được 460?",["454","456","465","472"],1,"456 có chữ số hàng đơn vị là 6 nên làm tròn lên 460.","VD"],
+        ["Số liền sau của 689 là:",["688","690","691","699"],1,"Số liền sau hơn số đã cho 1 đơn vị: 689 + 1 = 690.","VD"],
         ["Dãy số tăng đều 10 đơn vị: 325, 335, 345, ... Số tiếp theo là:",["346","350","355","365"],2,"Mỗi số hơn số đứng trước 10 đơn vị: 345 + 10 = 355.","VD"],
         ["Một số có ba chữ số lớn hơn 680 và bé hơn 690. Chữ số hàng đơn vị là 4. Số đó là:",["684","694","674","640"],0,"Trong khoảng từ 680 đến 690, số có hàng đơn vị 4 là 684.","VD"],
         ["Ba bạn viết ba số: An viết 509, Bình viết 590, Chi viết 905. Bạn viết số có 9 trăm là:",["An","Bình","Chi","An và Bình"],2,"905 có chữ số 9 ở hàng trăm, tức 9 trăm.","VD"],
@@ -77,7 +77,8 @@ window.MATH_BANK = {
         ["Một số gồm 8 trăm và một số đơn vị. Số đó lớn hơn 800 nhưng bé hơn 810. Có bao nhiêu khả năng?",["8","9","10","11"],1,"Các số phù hợp là 801 đến 809, có 9 số (không kể 800 và 810).","VD"],
         ["Sắp xếp các số 609, 690, 906, 960 theo thứ tự từ bé đến lớn:",["609, 690, 906, 960","690, 609, 906, 960","960, 906, 690, 609","609, 906, 690, 960"],0,"So sánh hàng trăm trước, rồi hàng chục: 609 < 690 < 906 < 960.","VD"],
         ["Một số có ba chữ số. Nếu đổi chỗ chữ số hàng trăm và hàng đơn vị của số 316 thì được số nào?",["613","631","136","361"],0,"Đổi vị trí 3 và 6, giữ nguyên hàng chục 1, ta được 613.","VD"],
-        ["Tìm số lớn nhất có ba chữ số mà tổng ba chữ số bằng 10:",["910","901","820","811"],0,"Để số lớn nhất, chọn hàng trăm 9; hai chữ số còn lại có tổng 1. Chọn hàng chục 1, hàng đơn vị 0 được 910.","VD"]
+        ["Tìm số lớn nhất có ba chữ số mà tổng ba chữ số bằng 10:",["910","901","820","811"],0,"Để số lớn nhất, chọn hàng trăm 9; hai chữ số còn lại có tổng 1. Chọn hàng chục 1, hàng đơn vị 0 được 910.","VD"],
+        ["Số nào lớn hơn 598 đúng 1 đơn vị?",["597","598","599","600"],3,"598 + 1 = 599. Phương án đúng là 599.","VD"]
       ]
     }
   ]
