@@ -110,3 +110,12 @@
 - Toán 3 – Tập 2: https://sgkvn.com/lop-3-9/ket-noi-tri-thuc-voi-cuoc-song-3/toan-3-tap-hai-1071.html
 
 Lưu ý: các trang trên chỉ dùng để đối chiếu tên bài và thứ tự bài học. Câu hỏi, ví dụ và lời giải trong ngân hàng là nội dung biên soạn mới; cần tiếp tục rà soát chuyên môn với sách giáo khoa trước khi phát hành rộng rãi.
+
+
+## Kiểm toán chuyên môn toàn bộ ngân hàng – 04/11/2026
+
+- Đã lập báo cáo kiểm toán nền tại [docs/TOAN3-AUDIT-CHUYEN-MON.md](./TOAN3-AUDIT-CHUYEN-MON.md).
+- Kết luận kiểm toán nền: **CHƯA ĐẠT**; không được gắn nhãn học liệu đã thẩm định.
+- Đã kiểm tra định lượng toàn bộ 3.240 bản ghi. Trong 79 bài sinh theo mẫu, 55 bài có câu trùng; có 1344 bản ghi trùng vượt số câu hỏi duy nhất.
+- Cần biên tập lại ma trận, câu hỏi, phương án nhiễu, đáp án, lời giải và phần củng cố kiến thức. Việc đủ 40 câu và đúng cấu trúc dữ liệu không phải tiêu chí nghiệm thu chuyên môn.
+- Trạng thái Bài 1–81 chuyển thành **Chờ kiểm toán/biên tập chuyên môn** cho đến khi hoàn tất các bước nghiệm thu trong báo cáo.
