@@ -34,7 +34,7 @@
     [31,"Gam","unit-g",0],
     [32,"Mi-li-lít","unit-ml",0],
     [33,"Nhiệt độ. Đơn vị đo nhiệt độ","temperature",0],
-    [34,"Thực hành và trải nghiệm với các đơn vị mi-li-mét, gam, mi-li-mét, độ C","unit-mix",0],
+    [34,"Thực hành và trải nghiệm với các đơn vị mi-li-mét, gam, mi-li-lít, độ C","unit-mix",0],
     [35,"Luyện tập chung","review1",4],
     [36,"Nhân số có ba chữ số với số có một chữ số","mult3",0],
     [37,"Chia số có ba chữ số cho số có một chữ số","div3",0],
@@ -121,13 +121,13 @@
       }
       case "mult2": case "mult3": case "mult4": case "mult5":{
         const max=m[2]==="mult2"?89:m[2]==="mult3"?999:m[2]==="mult4"?9999:99999;
-        const left=m[2]==="mult2"?11+(n*3)%18:m[2]==="mult3"?101+(n*3)%10:m[2]==="mult4"?1001+(n*7)%100:10001+(n*71)%1000;
+        const left=m[2]==="mult2"?11+(n*3)%14:m[2]==="mult3"?101+(n*3)%10:m[2]==="mult4"?1001+(n*7)%100:10001+(n*71)%1000;
         const right=m[2]==="mult2"?2+(n%3):2+(n*3)%8; ans=left*right; q=fmt(left)+" × "+right+" = ?";ex=fmt(left)+" × "+right+" = "+fmt(ans)+". Nhân lần lượt theo từng hàng, chú ý nhớ.";
         w=[ans+right,ans-right,ans+10];break;
       }
       case "div2": case "div3": case "div4": case "div5":{
-        const base=m[2]==="div2"?12+(n*7)%20:m[2]==="div3"?102+(n*3)%10:m[2]==="div4"?1002+(n*7)%100:10002+(n*71)%1000;
-        const divisor=2+(n*3)%8, dividend=base*divisor;ans=base;q=fmt(dividend)+" : "+divisor+" = ?";ex=fmt(dividend)+" chia "+divisor+" được "+fmt(base)+". Có thể nhân thương với số chia để thử lại.";
+        const base=m[2]==="div2"?12+(n*3)%12:m[2]==="div3"?102+(n*3)%10:m[2]==="div4"?1002+(n*7)%100:10002+(n*71)%1000;
+        const divisor=m[2]==="div2"?2+(n%3):2+(n*3)%8, dividend=base*divisor;ans=base;q=fmt(dividend)+" : "+divisor+" = ?";ex=fmt(dividend)+" chia "+divisor+" được "+fmt(base)+". Có thể nhân thương với số chia để thử lại.";
         w=[ans+1,Math.max(0,ans-1),ans+divisor];break;
       }
       case "division-remainder":{
@@ -151,7 +151,7 @@
         ex="Xác định hàng của chữ số rồi đọc giá trị theo hàng.";break;
       }
       case "round4": case "round5":{
-        const step=m[2]==="round4"?(n%2?10:100):(n%2?1000:10000), value=m[2]==="round4"?2456+(n*137)%7000:12456+(n*1379)%75000;
+        const step=m[2]==="round4"?(n%2?10:100):(n%2?1000:10000), value=m[2]==="round4"?2456+(n*137)%6500:12456+(n*1379)%75000;
         ans=Math.round(value/step)*step;q="Làm tròn số "+fmt(value)+" đến hàng "+(step===10?"chục":step===100?"trăm":step===1000?"nghìn":"chục nghìn")+":";
         w=[ans+step,Math.max(0,ans-step),ans+2*step];ex="Xét chữ số ngay bên phải hàng cần làm tròn; từ 5 trở lên thì tăng 1 ở hàng đó.";
         break;
@@ -167,7 +167,7 @@
         const l=3+n%12,h=2+(n*3)%10;q="Hình chữ nhật có chiều dài "+l+" cm, chiều rộng "+h+" cm. Diện tích là:";ans=l*h;w=[2*(l+h),l+h,ans+l];ex="Diện tích = chiều dài × chiều rộng = "+l+" × "+h+" = "+ans+" cm².";break;
       }
       case "add4": case "add5": case "sub4": case "sub5":{
-        const lim=m[2].includes("5")?70000:7000, p=1000+(n*317)%lim, r=200+(n*139)%Math.max(300,lim/3);
+        const lim=m[2].includes("5")?70000:5500, p=1000+(n*317)%lim, r=200+(n*139)%Math.max(300,lim/5);
         const sub=m[2].startsWith("sub");let A=p+r,B=p;
         if(sub){A=Math.max(p,r)+Math.min(p,r);B=Math.min(p,r);ans=A-B;q=fmt(A)+" − "+fmt(B)+" = ?";}else{ans=A+B;q=fmt(A)+" + "+fmt(B)+" = ?";}
         w=[ans+10,Math.max(0,ans-10),ans+100];ex="Đặt tính thẳng cột theo từng hàng rồi thực hiện từ phải sang trái.";break;
@@ -220,10 +220,14 @@
         const a=10000+(n%5)*5000,b=5000+(n%4)*5000;q="Mua một món đồ giá "+fmt(a)+" đồng và trả thêm "+fmt(b)+" đồng. Tổng số tiền là:";ans=a+b;w=[a-b,a+b+5000,a+2*b];ex=fmt(a)+" + "+fmt(b)+" = "+fmt(ans)+" đồng.";break;
       }
       case "statistics": case "stats-practice":{
-        const vals=[3+n%7,5+(n*2)%8,2+(n*3)%6], max=Math.max(...vals);q="Bảng ghi số sách ba tổ quyên góp lần lượt là "+vals.join(", ")+" quyển. Tổ có số sách nhiều nhất là tổ:";ans="Tổ "+(vals.indexOf(max)+1);w=["Tổ "+((vals.indexOf(max)+1)%3+1),"Tổ "+((vals.indexOf(max)+2)%3+1),"Cả ba tổ bằng nhau"];ex="So sánh các số liệu, số lớn nhất là "+max+".";return mc(q,ans,w,ex,level);
+        const vals=[3+n%5,10+n%5,17+n%5], max=Math.max(...vals);q="Bảng ghi số sách ba tổ quyên góp lần lượt là "+vals.join(", ")+" quyển. Tổ có số sách nhiều nhất là tổ:";ans="Tổ "+(vals.indexOf(max)+1);w=["Tổ "+((vals.indexOf(max)+1)%3+1),"Tổ "+((vals.indexOf(max)+2)%3+1),"Cả ba tổ bằng nhau"];ex="So sánh các số liệu, số lớn nhất là "+max+".";return mc(q,ans,w,ex,level);
       }
       case "probability":{
-        const opts=["chắc chắn","có thể","không thể","luôn luôn"];q="Trong hộp chỉ có các viên bi màu đỏ. Lấy ngẫu nhiên một viên bi, sự kiện lấy được bi đỏ là:";ans="chắc chắn";w=opts.filter(v=>v!==ans);ex="Vì trong hộp tất cả viên bi đều màu đỏ nên lấy được bi đỏ là sự kiện chắc chắn.";return mc(q,ans,w,ex,level);
+        const mode=n%3;
+        if(mode===0){q="Trong hộp chỉ có các viên bi màu đỏ. Lấy một viên bi, sự kiện lấy được bi đỏ là:";ans="chắc chắn";w=["có thể","không thể","không biết"];ex="Trong hộp chỉ có bi đỏ nên chắc chắn lấy được bi đỏ.";}
+        else if(mode===1){q="Trong hộp có bi đỏ và bi xanh. Lấy một viên bi, sự kiện lấy được bi đỏ là:";ans="có thể";w=["chắc chắn","không thể","luôn luôn"];ex="Trong hộp có cả bi đỏ và bi xanh nên lấy được bi đỏ là có thể xảy ra.";}
+        else {q="Trong hộp chỉ có bi xanh. Lấy một viên bi, sự kiện lấy được bi đỏ là:";ans="không thể";w=["chắc chắn","có thể","luôn luôn"];ex="Không có bi đỏ trong hộp nên không thể lấy được bi đỏ.";}
+        return mc(q,ans,w,ex,level);
       }
       case "review1": case "review2": case "review-mul": case "review-geometry": case "review-geometry2": case "review-number": case "review-addsub": case "review-mul5": case "review-stats": case "review-final":{
         const family=m[2], choice=n%4;
