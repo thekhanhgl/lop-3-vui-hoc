@@ -166,3 +166,47 @@ Một bài chỉ được đánh dấu **ĐẠT** khi:
 - Giao diện hiển thị đúng và phản hồi đáp án chính xác.
 
 **Lưu ý:** Báo cáo này là kết quả kiểm toán nền dữ liệu và kiểm tra định lượng toàn bộ 3.240 bản ghi. Đây chưa phải chứng nhận đã thẩm định thủ công từng lời giải. Những câu chưa có bằng chứng kiểm tra độc lập phải tiếp tục để trạng thái “chưa duyệt”.
+
+
+## 7. Kiểm tra sâu các mẫu sinh và phạm vi kiến thức
+
+### 7.1. Kiểm tra đáp án phép tính trực tiếp
+Đã trích xuất và tính độc lập **1.081 câu có biểu thức số học trực tiếp** (cộng, trừ, nhân, chia) trong ngân hàng. Kết quả lần kiểm tra này: **không phát hiện sai kết quả số học so với đáp án được đánh dấu**.
+
+Giới hạn: phép kiểm tra này không chứng minh các bài toán lời văn, câu hỏi hình học, đo lường, thời gian, thống kê hoặc xác suất đều đúng. Nó cũng không đánh giá phương án nhiễu có hợp lí hay lời giải có đủ bước hay không.
+
+### 7.2. Lỗi và thiếu hụt cụ thể đã xác định từ bộ sinh
+| Vị trí | Phát hiện | Mức độ |
+|---|---|---|
+| Bài 4–12 | Một số bảng nhân sinh thừa số thứ hai đến 11; cần đối chiếu phạm vi bảng nhân đã học và thiết kế lại phân bố phép nhân/chia. | Cao |
+| Bài 13 | Mẫu hiện có chủ yếu tìm thừa số hoặc số chia; thiếu dạng tìm số bị chia dù phần củng cố nêu nội dung này. | Cao |
+| Bài 16 | Chỉ hỏi độ dài một nửa đoạn thẳng; chưa kiểm tra đầy đủ nhận biết điểm nằm giữa và điều kiện trung điểm. | Cao |
+| Bài 18 | Chỉ có 2 mẫu câu hỏi, lặp 38 lượt; thiếu nhận diện và phân loại góc qua hình/đặc điểm. | Cao |
+| Bài 20 | Một câu hỏi về dụng cụ vẽ góc vuông được lặp 40 lần; không kiểm tra các thao tác vẽ đường tròn, hình vuông, hình chữ nhật. | Nghiêm trọng |
+| Bài 21 | Chỉ có 2 mẫu; thiếu đếm mặt, cạnh/đỉnh và phân biệt hai khối qua đặc điểm. | Cao |
+| Bài 31 | Câu hỏi nêu khối lượng bằng gam rồi hỏi lại số gam; gần như không tạo nhiệm vụ đo lường hoặc đổi đơn vị. | Cao |
+| Bài 32 | Câu hỏi nêu dung tích bằng ml rồi hỏi lại chính số ml; thiếu đọc vạch chia và tình huống đo dung tích. | Cao |
+| Bài 39 | Tên bài yêu cầu so sánh số lớn gấp mấy lần số bé, nhưng mẫu hiện tại cho sẵn số lần và số bé rồi yêu cầu tìm số lớn. Đây là dạng gấp lên, không phải dạng so sánh số lớn gấp mấy lần số bé. | Nghiêm trọng |
+| Bài 43 | Một câu chu vi hình vuông cạnh 6 cm được lặp 40 lần, không đại diện cho ôn tập hình học và đo lường. | Nghiêm trọng |
+| Bài 50 | Có mẫu tam giác, hình vuông, hình chữ nhật nhưng chưa có dạng chu vi hình tứ giác bất kỳ như tên bài. | Cao |
+| Bài 52 | Mẫu sinh chỉ tính diện tích hình chữ nhật; chưa có câu tính diện tích hình vuông dù tên bài gồm cả hai. | Cao |
+| Bài 54 | **12/40 câu có kết quả vượt phạm vi 10 000**, không phù hợp giới hạn được nêu trong tên bài. | Nghiêm trọng |
+| Bài 59 | Giá trị sinh ra chỉ nằm khoảng 1 719 đến 29 760; có câu vẫn là số có bốn chữ số và chưa bao quát số gần 100 000. | Cao |
+| Bài 66 | Chỉ sinh câu hỏi cộng thêm 30 phút; chưa có câu hỏi tháng – năm dù tên bài bao gồm nội dung này. | Cao |
+| Bài 67 | Chủ yếu hỏi phân loại tháng theo số ngày; chưa có tình huống đọc ngày cụ thể, thứ trong tuần hoặc tính khoảng cách ngày. | Cao |
+| Bài 68 | Chỉ cộng giá hai món; chưa có bài toán ghép mệnh giá, số tiền trả và tiền thừa. | Cao |
+| Bài 73 và 75 | Dữ liệu số luôn tăng theo cùng một cấu trúc, tổ thứ ba luôn lớn nhất; không tạo bảng dữ liệu đa dạng và không kiểm tra đầy đủ phân loại/ghi chép. | Nghiêm trọng |
+| Bài 74 | Chỉ có 3 tình huống lặp; chưa có ngữ cảnh phong phú để học sinh phân biệt chắc chắn, không thể và có thể xảy ra. | Cao |
+| Bài 76–80 | Mỗi bài chỉ có một mẫu câu hỏi được lặp 40 lần. | Nghiêm trọng |
+| Bài 77 | Cả 40 câu chỉ là phép cộng cố định 25 000 + 15 000; không kiểm tra phép trừ hoặc các dạng ôn tập khác. | Nghiêm trọng |
+| Bài 78 | Cả 40 câu chỉ là phép nhân cố định 12 000 × 3; không kiểm tra phép chia. | Nghiêm trọng |
+
+### 7.3. Lỗi ngôn ngữ
+Phát hiện **140 lời giải ở Bài 4–12** sử dụng câu tiếng Anh dạng “groups of … equal …”. Toàn bộ lời giải trong học liệu dành cho học sinh cần thống nhất bằng tiếng Việt tự nhiên, đúng thuật ngữ Toán tiểu học.
+
+### 7.4. Phân biệt kết quả kiểm tra
+- **Đã kiểm tra bằng máy:** số lượng, cấu trúc dữ liệu, đáp án được đánh dấu, phương án không trùng trong một câu, số học của 1.081 biểu thức trực tiếp và các câu hỏi trùng nguyên văn.
+- **Đã xác định lỗi nội dung theo mẫu:** các trường hợp cụ thể tại bảng 7.2.
+- **Chưa hoàn tất:** đọc và thẩm định thủ công từng lời giải, từng phương án nhiễu, tính phù hợp lứa tuổi, độ khó, tính đại diện chương trình của toàn bộ 3.240 câu.
+
+Vì vậy, không được diễn giải kết quả kiểm tra số học tự động thành kết luận “đã rà đúng toàn bộ 3.240 câu”.
