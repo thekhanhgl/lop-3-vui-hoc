@@ -60,7 +60,7 @@ window.MATH_BANK = {
 
         ["Một thư viện có 6 trăm quyển sách, 3 chục quyển và 8 quyển lẻ. Thư viện có tất cả:",["638 quyển","683 quyển","368 quyển","608 quyển"],0,"6 trăm + 3 chục + 8 đơn vị = 638 quyển.","VD"],
         ["Bảng ghi số cây của ba lớp: 3A có 245 cây, 3B có 254 cây, 3C có 245 cây. Lớp trồng nhiều cây nhất là:",["3A","3B","3C","3A và 3C"],1,"254 lớn hơn 245 nên lớp 3B trồng nhiều cây nhất.","VD"],
-        ["Một số có ba chữ số. Hàng trăm là 5, hàng chục hơn hàng đơn vị 2 đơn vị; hàng đơn vị là 3. Số đó là:",["523","553","532","535"],0,"Hàng đơn vị là 3, hàng chục là 3 + 2 = 5; hàng trăm là 5. Số đó là 553. Phương án đúng là 553.","VD"],
+        ["Một số có ba chữ số. Hàng trăm là 5, hàng chục hơn hàng đơn vị 2 đơn vị; hàng đơn vị là 3. Số đó là:",["523","553","532","535"],1,"Hàng đơn vị là 3, hàng chục là 3 + 2 = 5; hàng trăm là 5. Số đó là 553. Phương án đúng là 553.","VD"],
         ["Kho có 407 kg gạo. Người ta nhập thêm 1 bao 90 kg. Số biểu thị lượng gạo sau khi nhập là:",["497 kg","4970 kg","490 kg","417 kg"],0,"407 + 90 = 497 kg. Đây là tình huống vận dụng đọc và cấu tạo số.","VD"],
         ["Trên bảng có các số 608, 680, 806, 860. Số lớn thứ hai là:",["608","680","806","860"],2,"Thứ tự từ lớn đến bé: 860, 806, 680, 608. Số lớn thứ hai là 806.","VD"],
         ["Một số có ba chữ số, chữ số hàng trăm là 7, chữ số hàng đơn vị là 0, chữ số hàng chục lớn hơn 2 và nhỏ hơn 4. Số đó là:",["720","730","740","703"],1,"Chữ số hàng chục phải là 3; số cần tìm là 730.","VD"],
