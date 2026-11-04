@@ -1,5 +1,7 @@
 (() => {
   const data = window.LEARNING_DATA;
+  // Tích hợp ngân hàng Toán theo từng bài; giữ nguyên các môn học khác.
+  if (window.MATH_BANK?.topics?.length) data.math.topics = window.MATH_BANK.topics;
   const $ = (s, root=document) => root.querySelector(s);
   const state = { stars:0, completed:[], lastTopic:null, current:null, index:0, correct:0, answered:false, flashIndex:0 };
   const STORAGE = "lop3vuihoc_progress_v1";
@@ -44,7 +46,32 @@
   function startTopic(id){
     const found=findTopic(id); if(!found)return;
     state.current=found; state.lastTopic=id; state.index=0; state.correct=0; state.answered=false; state.flashIndex=0;
+    if(found.topic.summary){ renderLessonIntro(); return; }
     if(found.topic.words) renderFlashcard(); else renderQuestion();
+  }
+  function renderLessonIntro(){
+    const t=state.current.topic, s=t.summary;
+    const section=(title,items)=>'<section class="knowledge-section"><h3>'+title+'</h3>'+items+'</section>';
+    const goals=s.goals.map(x=>'<li>'+x+'</li>').join('');
+    const knowledge=s.knowledge.map(x=>'<article class="knowledge-card"><b>'+x.title+'</b><p>'+x.detail+'</p></article>').join('');
+    const examples=s.examples.map(x=>'<article class="example-card"><b>'+x.question+'</b><p><strong>'+x.answer+'</strong></p><small>'+x.explain+'</small></article>').join('');
+    const mistakes=s.commonMistakes.map(x=>'<li>'+x+'</li>').join('');
+    $("#dialogContent").innerHTML='<div class="dialog-body lesson-intro"><div class="lesson-label">TOÁN 3 · '+t.book+' · BÀI '+t.lessonNo+'</div><h2>'+t.title+'</h2>'+
+      section('🎯 Em sẽ học được gì?','<ul>'+goals+'</ul>')+
+      section('📘 Kiến thức cần nhớ','<div class="knowledge-grid">'+knowledge+'</div>')+
+      section('✏️ Ví dụ minh họa','<div class="example-grid">'+examples+'</div>')+
+      section('⚠️ Những lỗi cần tránh','<ul>'+mistakes+'</ul>')+
+      '<div class="tip-box">💡 '+s.tip+'</div><div class="quiz-actions"><button class="btn btn-soft" id="backToTopics">Quay lại</button><button class="btn btn-primary" id="beginMathPractice">Bắt đầu luyện tập →</button></div></div>';
+    $("#backToTopics").addEventListener("click",()=>openSubject(state.current.key));
+    $("#beginMathPractice").addEventListener("click",beginMathPractice);
+  }
+  function beginMathPractice(){
+    const original=state.current.topic;
+    // Mỗi lượt lấy ngẫu nhiên 10 câu, không lặp trong cùng lượt.
+    const pool=[...original.questions];
+    for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+    state.current.topic={...original,questions:pool.slice(0,Math.min(10,pool.length))};
+    state.index=0;state.correct=0;state.answered=false;renderQuestion();
   }
   function renderQuestion(){
     const t=state.current.topic, q=t.questions[state.index]; state.answered=false;
