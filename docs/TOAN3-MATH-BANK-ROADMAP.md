@@ -14,7 +14,7 @@
 |---:|---|---|
 | 1 | Ôn tập các số đến 1 000 | Đã có dữ liệu – cần rà soát |
 | 2 | Ôn tập phép cộng, phép trừ trong phạm vi 1 000 | Hoàn thành bản đầu |
-| 3 | Tìm thành phần trong phép cộng, phép trừ | Đã tạo bản nháp – cần rà soát |
+| 3 | Tìm thành phần trong phép cộng, phép trừ | Đã biên tập lại 40 câu – chờ kiểm thử trên giao diện |
 | 4 | Ôn tập bảng nhân 2; 5, bảng chia 2; 5 | Đã tạo bản nháp – cần rà soát |
 | 5 | Bảng nhân 3, bảng chia 3 | Đã tạo bản nháp – cần rà soát |
 | 6 | Bảng nhân 4, bảng chia 4 | Đã tạo bản nháp – cần rà soát |
@@ -119,3 +119,17 @@ Lưu ý: các trang trên chỉ dùng để đối chiếu tên bài và thứ t
 - Đã kiểm tra định lượng toàn bộ 3.240 bản ghi. Trong 79 bài sinh theo mẫu, 55 bài có câu trùng; có 1344 bản ghi trùng vượt số câu hỏi duy nhất.
 - Cần biên tập lại ma trận, câu hỏi, phương án nhiễu, đáp án, lời giải và phần củng cố kiến thức. Việc đủ 40 câu và đúng cấu trúc dữ liệu không phải tiêu chí nghiệm thu chuyên môn.
 - Trạng thái Bài 1–81 chuyển thành **Chờ kiểm toán/biên tập chuyên môn** cho đến khi hoàn tất các bước nghiệm thu trong báo cáo.
+
+
+## Cập nhật chuẩn hóa theo đợt – 05/11/2026
+
+### Đợt 1: Bài 3 – Tìm thành phần trong phép cộng, phép trừ
+- Đã thay bộ câu hỏi sinh theo mẫu bằng 40 câu được biên tập riêng.
+- Cơ cấu: 10 câu Nhận biết, 10 câu Thông hiểu, 20 câu Vận dụng.
+- Nội dung bao quát tìm số hạng chưa biết, số bị trừ, số trừ; nhận diện phép tính ngược; kiểm tra kết quả; bài toán có lời văn một và hai bước.
+- Đã viết lại phần củng cố: mục tiêu, kiến thức cốt lõi, ví dụ giải từng bước, lỗi thường gặp và mẹo tự kiểm tra.
+- Kiểm tra sơ bộ tự động: 40 câu, 40 câu dẫn khác nhau; dữ liệu giữ đúng cấu trúc tương thích với ứng dụng.
+- Tệp dữ liệu: `assets/js/math-bank-reviewed.js`; tệp này được nạp sau ngân hàng nháp để ghi đè riêng Bài 3.
+- Trạng thái: **Đã biên tập – chờ kiểm thử hiển thị và nghiệm thu chuyên môn cuối cùng**.
+
+Lưu ý: việc thay thế theo từng bài giúp giữ nguyên các bài chưa biên tập để đối chiếu, đồng thời tránh tuyên bố toàn bộ ngân hàng đã đạt khi mới hoàn thành một phần.
