@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2457d6">
+  <title>Lớp 3 vui học</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Trang chủ">
+        <span class="brand-mark">🌈</span>
+        <span><b>LỚP 3 VUI HỌC</b><small>Học mỗi ngày · Tiến bộ mỗi ngày</small></span>
+      </a>
+      <div class="top-stats">
+        <span class="stat-chip">⭐ <b id="starCount">0</b></span>
+        <span class="stat-chip">📚 <b id="lessonCount">0</b> bài</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">GÓC HỌC TẬP CỦA BẠN</span>
+          <h1>Mỗi ngày một chút,<br><em>giỏi hơn thật nhiều!</em></h1>
+          <p>Chọn môn học yêu thích, hoàn thành thử thách và sưu tầm sao nhé.</p>
+          <div class="hero-actions">
+            <button class="btn btn-light" id="continueBtn">▶ Học ngay</button>
+            <span class="hero-note">Không cần đăng nhập · Lưu tiến độ trên thiết bị</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="book book-a">📘</div>
+          <div class="book book-b">📗</div><div class="pencil">✏️</div>
+          <div class="star star-a">✦</div><div class="star star-b">✧</div>
+          <div class="hero-orbit">3</div>
+        </div>
+      </section>
+
+      <section class="progress-panel">
+        <div><span class="eyebrow">HÀNH TRÌNH CỦA BẠN</span><h2>Tiến độ học tập</h2></div>
+        <div class="progress-summary"><strong id="progressPercent">0%</strong><span id="progressLabel">Bắt đầu bài học đầu tiên nào!</span></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+      </section>
+
+      <section class="section-heading">
+        <div><span class="eyebrow">KHÁM PHÁ VÀ LUYỆN TẬP</span><h2>Chọn môn học</h2></div>
+        <span class="muted">Lớp 3 · Chương trình phổ thông</span>
+      </section>
+      <section class="subject-grid" id="subjectGrid"></section>
+
+      <section class="recent-panel">
+        <div class="section-heading compact"><div><span class="eyebrow">ÔN TẬP TIẾP</span><h2>Bài học dành cho bạn</h2></div></div>
+        <div id="recommendedGrid" class="recommend-grid"></div>
+      </section>
+    </main>
+    <footer>🌱 Lớp 3 vui học · Học liệu tham khảo và bài luyện tập tự học tại nhà.</footer>
+  </div>
+
+  <dialog id="lessonDialog" class="lesson-dialog">
+    <div class="dialog-head"><button class="icon-btn" id="closeDialog" aria-label="Đóng">✕</button><div id="dialogSubject" class="dialog-subject"></div></div>
+    <div id="dialogContent"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
