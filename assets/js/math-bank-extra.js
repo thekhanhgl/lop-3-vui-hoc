@@ -153,7 +153,7 @@
       case "multtable": break;
       case "number4": case "number5": case "compare4": case "compare5":{
         const limit=m[2].includes("5")?100000:10000, value=1000+(n*719)% (limit-1000);
-        if(m[2].startsWith("compare")){const v2=value+(n%2?37:-43);q="So sánh hai số "+fmt(value)+" và "+fmt(v2)+": chọn kết luận đúng.";ans=value>v2?fmt(value)+" > "+fmt(v2):fmt(value)+" < "+fmt(v2);w=[fmt(value)+" = "+fmt(v2),fmt(v2)+" > "+fmt(value),fmt(value)+" > "+fmt(v2)];}
+        if(m[2].startsWith("compare")){const v2=value+(n%2?37:-43);q="So sánh hai số "+fmt(value)+" và "+fmt(v2)+": chọn kết luận đúng.";if(value>v2){ans=fmt(value)+" > "+fmt(v2);w=[fmt(value)+" < "+fmt(v2),fmt(value)+" = "+fmt(v2),fmt(value)+" < "+fmt(v2-1)];}else{ans=fmt(value)+" < "+fmt(v2);w=[fmt(value)+" > "+fmt(v2),fmt(value)+" = "+fmt(v2),fmt(value+1)+" < "+fmt(v2)];}}
         else {const place=Math.pow(10,n%4), val=Math.floor(value/place)%10*place;q="Trong số "+fmt(value)+", giá trị chữ số ở hàng "+(["đơn vị","chục","trăm","nghìn"][n%4])+" được xác định như thế nào?";ans=fmt(val);w=[fmt(val+place),fmt(Math.max(0,val-place)),fmt(val+10*place)];}
         ex="Xác định hàng của chữ số rồi đọc giá trị theo hàng.";break;
       }
