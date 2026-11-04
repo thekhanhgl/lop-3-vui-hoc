@@ -142,7 +142,7 @@
         const dividend=quotient*divisor+rem;
         q=fmt(dividend)+" : "+divisor+" có thương và số dư là:";ans=quotient+" dư "+rem;
         w=[(quotient+1)+" dư "+rem,quotient+" dư "+((rem+1)%divisor), (quotient-1)+" dư "+rem];
-        return mc(q,ans,w,fmt(dividend)+" = "+divisor+" × "+quotient+" + "+rem+". Số dư phải bé hơn số chia.","TH");
+        return mc(q,ans,w,fmt(dividend)+" = "+divisor+" × "+quotient+" + "+rem+". Số dư phải bé hơn số chia.",level);
       }
       case "timesmore": case "divideby":{
         const factor=2+(n%8), small=3+(n*5)%20;ans=small*factor;
