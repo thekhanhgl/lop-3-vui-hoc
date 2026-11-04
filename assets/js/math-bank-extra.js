@@ -290,7 +290,7 @@
 
   Object.assign(descriptions,{
     unknownmul:["Muốn tìm thừa số chưa biết, lấy tích chia cho thừa số đã biết; muốn tìm số bị chia, lấy thương nhân số chia; muốn tìm số chia, lấy số bị chia chia thương.","Dùng phép tính ngược để tìm thành phần chưa biết."],
-    division-remainder:["Trong phép chia có dư: số bị chia = số chia × thương + số dư; số dư luôn bé hơn số chia. Phép chia hết có số dư bằng 0.","Lấy số chia nhân thương rồi cộng số dư để kiểm tra."],
+    "division-remainder":["Trong phép chia có dư: số bị chia = số chia × thương + số dư; số dư luôn bé hơn số chia. Phép chia hết có số dư bằng 0.","Lấy số chia nhân thương rồi cộng số dư để kiểm tra."],
     mult2:["Đặt tính thẳng cột; nhân từ hàng đơn vị, chú ý nhớ khi tích một hàng từ 10 trở lên.","Tách số có hai chữ số thành chục và đơn vị để tính hoặc đặt tính."],
     div2:["Thực hiện chia lần lượt từ hàng chục đến hàng đơn vị; kiểm tra bằng phép nhân.","Thương nhân số chia phải bằng số bị chia nếu phép chia hết."],
     mult3:["Nhân số có ba chữ số với số có một chữ số theo từng hàng, từ phải sang trái; nhớ đúng.","Ước lượng kết quả trước, sau đó đặt tính và kiểm tra."],
