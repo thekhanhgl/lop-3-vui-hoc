@@ -18,7 +18,8 @@ Mở `index.html` bằng trình duyệt hoặc chạy bằng tiện ích Live Se
 - `assets/css/style.css`: giao diện responsive.
 - `assets/js/data.js`: dữ liệu bài học Tiếng Việt, Tiếng Anh và cấu hình môn học.
 - `assets/js/math-bank.js`: ngân hàng học liệu Toán 3 Bài 1–2.
-- `assets/js/math-bank-extra.js`: dữ liệu sinh cho Toán 3 Bài 3–81; mỗi bài có 40 câu, kiến thức, ví dụ và lỗi thường gặp.
+- `assets/js/math-bank-extra.js`: dữ liệu nháp sinh theo mẫu cho Toán 3 Bài 3–81.
+- `assets/js/math-bank-reviewed.js`: dữ liệu đã biên tập chuyên môn, hiện thay thế bản nháp Bài 3; các bài tiếp theo sẽ được bổ sung theo từng đợt.
 - `docs/TOAN3-MATH-BANK-ROADMAP.md`: lộ trình và trạng thái biên soạn 81 bài.
 - `docs/TOAN3-MATH-BANK-ROADMAP.md`: lộ trình 81 bài Toán 3 và trạng thái biên soạn.
 - `assets/js/app.js`: điều hướng, luyện tập, chấm điểm và lưu tiến độ.
@@ -28,4 +29,4 @@ Mở `index.html` bằng trình duyệt hoặc chạy bằng tiện ích Live Se
 Điểm sao và chủ đề hoàn thành được lưu bằng `localStorage` trên trình duyệt/thiết bị đang sử dụng. Dữ liệu không tự đồng bộ giữa các thiết bị.
 
 ## Ghi chú nội dung
-Ngân hàng Toán 3 hiện đã có cấu trúc 81 bài và 3 240 câu hỏi. Bài 3–81 dùng mẫu câu hỏi biến đổi số liệu tự động; đây là bản nháp quy mô lớn, cần rà soát chuyên môn từng bài trước khi sử dụng chính thức. Xem chi tiết tại `docs/TOAN3-MATH-BANK-ROADMAP.md`.
+Ngân hàng Toán 3 hiện có cấu trúc 81 bài; Bài 3 đã được biên tập lại với 40 câu hỏi riêng biệt. Các bài còn lại vẫn cần rà soát chuyên môn. Bài 3–81 dùng mẫu câu hỏi biến đổi số liệu tự động; đây là bản nháp quy mô lớn, cần rà soát chuyên môn từng bài trước khi sử dụng chính thức. Xem chi tiết tại `docs/TOAN3-MATH-BANK-ROADMAP.md`.
