@@ -16,7 +16,9 @@ Mở `index.html` bằng trình duyệt hoặc chạy bằng tiện ích Live Se
 ## Cấu trúc
 - `index.html`: trang chủ.
 - `assets/css/style.css`: giao diện responsive.
-- `assets/js/data.js`: dữ liệu bài học.
+- `assets/js/data.js`: dữ liệu bài học Tiếng Việt, Tiếng Anh và cấu hình môn học.
+- `assets/js/math-bank.js`: ngân hàng học liệu Toán 3 theo từng bài, gồm kiến thức trọng tâm, ví dụ, lỗi thường gặp và câu hỏi luyện tập.
+- `docs/TOAN3-MATH-BANK-ROADMAP.md`: lộ trình 81 bài Toán 3 và trạng thái biên soạn.
 - `assets/js/app.js`: điều hướng, luyện tập, chấm điểm và lưu tiến độ.
 - `docs/SOURCES.md`: nguồn tham khảo và ghi chú giấy phép.
 
@@ -24,4 +26,4 @@ Mở `index.html` bằng trình duyệt hoặc chạy bằng tiện ích Live Se
 Điểm sao và chủ đề hoàn thành được lưu bằng `localStorage` trên trình duyệt/thiết bị đang sử dụng. Dữ liệu không tự đồng bộ giữa các thiết bị.
 
 ## Ghi chú nội dung
-Các câu hỏi hiện tại là bộ học liệu khởi đầu, cần tiếp tục đối chiếu với phân phối chương trình và sách giáo khoa lớp 3 mà gia đình/nhà trường sử dụng trước khi xem là học liệu đầy đủ.
+Ngân hàng Toán đang được biên soạn theo sách Toán 3 Kết nối tri thức với cuộc sống, theo lộ trình tại `docs/TOAN3-MATH-BANK-ROADMAP.md`. Nội dung cần tiếp tục được rà soát chuyên môn trước khi phát hành rộng rãi.
