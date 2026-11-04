@@ -176,20 +176,32 @@
         const length=2*(2+n%15);q="Đoạn thẳng AB dài "+length+" cm. M là trung điểm AB. Độ dài AM là:";ans=length/2;w=[length,length/2+1,Math.max(1,length/2-1)];ex="Trung điểm chia đoạn thẳng thành hai đoạn bằng nhau: "+length+" : 2 = "+ans+" cm.";break;
       }
       case "circle":{
-        const opts=["tâm","bán kính","đường kính","dây cung"];q=n%2?"Đoạn thẳng nối tâm hình tròn với một điểm trên đường tròn gọi là gì?":"Đoạn thẳng đi qua tâm và có hai đầu mút trên đường tròn gọi là gì?";
-        ans=n%2?"bán kính":"đường kính";w=opts.filter(v=>v!==ans).slice(0,3);ex=n%2?"Bán kính nối tâm với một điểm trên đường tròn.":"Đường kính đi qua tâm và bằng hai lần bán kính.";return mc(q,ans,w,ex,level);
+        if(n%4===0){q="Đoạn thẳng nối tâm với một điểm trên đường tròn gọi là:";ans="bán kính";w=["đường kính","dây cung","cạnh"];ex="Bán kính nối tâm với một điểm trên đường tròn.";}
+        else if(n%4===1){q="Đoạn thẳng đi qua tâm và có hai đầu mút trên đường tròn gọi là:";ans="đường kính";w=["bán kính","dây cung","cạnh"];ex="Đường kính đi qua tâm và bằng hai lần bán kính.";}
+        else if(n%4===2){const r=2+n%8;q="Hình tròn có bán kính "+r+" cm. Đường kính dài:";ans=2*r;w=[r,2*r+1,r+2];ex="Đường kính = bán kính × 2 = "+r+" × 2 = "+(2*r)+" cm."; }
+        else {q="Điểm nằm chính giữa hình tròn, cách đều mọi điểm trên đường tròn là:";ans="tâm hình tròn";w=["đỉnh hình tròn","cạnh hình tròn","đường kính"];ex="Tâm là điểm cách đều các điểm trên đường tròn.";}
+        return mc(q,ans,w,ex,level);
       }
       case "angle":{
-        const opts=["góc vuông","góc nhọn","góc tù","góc bẹt"];q="Góc có dạng như góc ở một góc viên gạch hình vuông là:";ans="góc vuông";w=opts.filter(v=>v!==ans);ex="Góc vuông có dạng góc của hình vuông, hình chữ nhật.";return mc(q,ans,w,ex,level);
+        const opts=["góc vuông","góc nhọn","góc tù","góc bẹt"];
+        if(n%2===0){q="Góc ở mỗi đỉnh của hình chữ nhật là:";ans="góc vuông";w=opts.filter(v=>v!==ans);ex="Hình chữ nhật có bốn góc vuông.";}
+        else {q="Dụng cụ thường dùng để kiểm tra một góc có vuông hay không là:";ans="ê ke";w=["compa","cân","thước dây"];ex="Đặt ê ke vào góc cần kiểm tra để nhận biết góc vuông.";}
+        return mc(q,ans,w,ex,level);
       }
       case "polygon":{
-        const opts=["3 cạnh","4 cạnh","5 cạnh","6 cạnh"];q="Hình tứ giác có bao nhiêu cạnh?";ans="4 cạnh";w=opts.filter(v=>v!==ans);ex="Tứ giác là hình có bốn cạnh và bốn đỉnh.";return mc(q,ans,w,ex,level);
+        const opts=["3 cạnh","4 cạnh","5 cạnh","6 cạnh"];
+        if(n%3===0){q="Hình tam giác có bao nhiêu cạnh?";ans="3 cạnh";w=opts.filter(v=>v!==ans);ex="Hình tam giác có 3 cạnh và 3 đỉnh.";}
+        else if(n%3===1){q="Hình tứ giác có bao nhiêu cạnh?";ans="4 cạnh";w=opts.filter(v=>v!==ans);ex="Hình tứ giác có 4 cạnh và 4 đỉnh.";}
+        else {q="Hình vuông có đặc điểm nào?";ans="4 cạnh bằng nhau và 4 góc vuông";w=["2 cạnh dài, 2 cạnh ngắn","3 cạnh và 3 góc","4 cạnh nhưng không có góc vuông"];ex="Hình vuông có bốn cạnh bằng nhau và bốn góc vuông.";}
+        return mc(q,ans,w,ex,level);
       }
       case "draw":{
         const opts=["thước thẳng và ê ke","compa","cân","nhiệt kế"];q="Dụng cụ phù hợp để kiểm tra và vẽ góc vuông là:";ans="thước thẳng và ê ke";w=opts.filter(v=>v!==ans);ex="Ê ke giúp nhận biết và vẽ góc vuông.";return mc(q,ans,w,ex,level);
       }
       case "solid":{
-        const opts=["6 mặt vuông bằng nhau","6 mặt chữ nhật khác nhau","4 mặt tam giác","2 mặt tròn"];q="Khối lập phương có đặc điểm nào?";ans="6 mặt vuông bằng nhau";w=opts.filter(v=>v!==ans);ex="Khối lập phương có 6 mặt đều là hình vuông bằng nhau.";return mc(q,ans,w,ex,level);
+        if(n%2===0){q="Khối lập phương có bao nhiêu mặt?";ans=6;w=[4,5,8];ex="Khối lập phương có 6 mặt hình vuông.";}
+        else {q="Khối hộp chữ nhật có dạng các mặt là:";ans="hình chữ nhật";w=["hình tròn","hình tam giác","hình thang"];ex="Khối hộp chữ nhật có 6 mặt đều là hình chữ nhật.";}
+        return mc(q,ans,w,ex,level);
       }
       case "unit-mm":{
         const cm=2+n%15;q=cm+" cm bằng bao nhiêu mi-li-mét?";ans=cm*10;w=[cm*100,cm,cm*10+5];ex="1 cm = 10 mm nên "+cm+" cm = "+ans+" mm.";break;
