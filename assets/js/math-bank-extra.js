@@ -98,6 +98,13 @@
     const big=1200+(n*173)%7800, digit=2+(n*5)%8;
     let q,ans,w,ex;
     switch(m[2]){
+      case "geometry":{
+        if(n%4===0){q="Đoạn thẳng nối tâm với một điểm trên đường tròn gọi là:";ans="bán kính";w=["đường kính","dây cung","cạnh"];ex="Bán kính nối tâm với một điểm trên đường tròn.";}
+        else if(n%4===1){q="Hình tam giác có bao nhiêu cạnh?";ans="3 cạnh";w=["4 cạnh","5 cạnh","6 cạnh"];ex="Hình tam giác có 3 cạnh.";}
+        else if(n%4===2){q="Hình vuông có bao nhiêu góc vuông?";ans=4;w=[2,3,5];ex="Hình vuông có 4 góc vuông.";}
+        else {q="Khối lập phương có bao nhiêu mặt?";ans=6;w=[4,5,8];ex="Khối lập phương có 6 mặt.";}
+        return mc(q,ans,w,ex,level);
+      }
       case "unknown":
         if(n%4===0){q="□ + "+a+" = "+(a+b)+". Số cần điền là:";ans=b;ex=ans+" + "+a+" = "+(a+b)+". Lấy tổng trừ số hạng đã biết.";}
         else if(n%4===1){q=a+" + □ = "+(a+b)+". Số cần điền là:";ans=b;ex=(a+b)+" − "+a+" = "+b+".";}
@@ -248,12 +255,16 @@
         else if(family==="review-number"){q="Số liền sau của 9 999 là:";ans=10000;w=[9998,9990,10001];ex="Số liền sau hơn số đã cho 1 đơn vị.";}
         else if(family==="review-addsub"){q="25 000 + 15 000 = ?";ans=40000;w=[30000,41000,45000];ex="25 000 + 15 000 = 40 000.";}
         else if(family==="review-mul5"){q="12 000 × 3 = ?";ans=36000;w=[24000,35000,3600];ex="12 000 × 3 = 36 000.";}
-        else if(family==="review-mul"){q="8 × 7 = ?";ans=56;w=[54,48,64];ex="8 × 7 = 56.";}
-        else {q="345 + 120 = ?";ans=465;w=[455,475,565];ex="345 + 120 = 465.";}
+        else if(family==="review-mul"){const a=3+n%7,b=4+(n*3)%6; q=a+" × "+b+" = ?";ans=a*b;w=[ans+a,ans-b,ans+2];ex=a+" × "+b+" = "+ans+".";}
+        else {const a=120+n*7,b=35+n*3;q=fmt(a)+" + "+fmt(b)+" = ?";ans=a+b;w=[ans+10,ans-10,ans+100];ex=fmt(a)+" + "+fmt(b)+" = "+fmt(ans)+".";}
         break;
       }
       case "unit-mix":{
-        q="1 cm bằng bao nhiêu mi-li-mét?";ans=10;w=[100,1,5];ex="1 cm = 10 mm.";break;
+        if(n%4===0){q="1 cm bằng bao nhiêu mi-li-mét?";ans=10;w=[100,1,5];ex="1 cm = 10 mm.";}
+        else if(n%4===1){q="1 kg bằng bao nhiêu gam?";ans=1000;w=[100,10,10000];ex="1 kg = 1 000 g.";}
+        else if(n%4===2){q="Đơn vị phù hợp để đo dung tích một chai nước nhỏ là:";ans="mi-li-lít";w=["ki-lô-gam","mi-li-mét","độ C"];ex="Dung tích chất lỏng thường đo bằng lít hoặc mi-li-lít.";}
+        else {q="Dụng cụ dùng để đo nhiệt độ là:";ans="nhiệt kế";w=["thước kẻ","cân","ca đong"];ex="Nhiệt kế dùng để đo nhiệt độ.";}
+        return mc(q,ans,w,ex,level);
       }
       default:
         q="Tính "+a+" + "+b+" = ?";ans=a+b;w=[ans+1,ans-1,ans+10];ex=a+" + "+b+" = "+ans+".";break;
