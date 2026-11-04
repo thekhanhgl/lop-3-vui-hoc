@@ -230,7 +230,8 @@
         const p=2+n%9, r=3+(n*2)%9, z=4+n%7;ans=p*r+z;q=p+" × "+r+" + "+z+" = ?";w=[p*(r+z),p*r-z,p+r*z];ex="Thực hiện phép nhân trước: "+p+" × "+r+" = "+p*r+"; sau đó cộng "+z+" được "+ans+".";break;
       }
       case "time":{
-        const hour=6+n%12, minute=(n%4)*15;q="Đồng hồ chỉ "+hour+" giờ "+(minute?minute+" phút":"đúng")+". Sau 30 phút là:";let total=hour*60+minute+30;ans=Math.floor(total/60)+":"+String(total%60).padStart(2,"0");w=[hour+":"+String(minute).padStart(2,"0"),(hour+1)+":00",(hour+2)+":30"];ex="Cộng thêm 30 phút và đổi sang giờ, phút khi đủ 60 phút.";return mc(q,ans,w,ex,level);
+        const hour=6+n%12, minute=(n%4)*15, start=hour*60+minute, total=start+30, clock=v=>Math.floor(v/60)+":"+String(v%60).padStart(2,"0");
+        q="Đồng hồ chỉ "+hour+" giờ "+(minute?minute+" phút":"đúng")+". Sau 30 phút là:";ans=clock(total);w=[clock(start),clock(total+60),clock(total-15)];ex="Cộng thêm 30 phút và đổi sang giờ, phút khi đủ 60 phút.";return mc(q,ans,w,ex,level);
       }
       case "calendar":{
         const days=[28,30,31][n%3];q="Một tháng có "+days+" ngày. Tháng đó có thể là:";ans=days===28?"tháng 2 của năm không nhuận":days===30?"tháng 4, 6, 9 hoặc 11":"tháng 1, 3, 5, 7, 8, 10 hoặc 12";w=["tháng 2 luôn có 30 ngày","tháng nào cũng có "+days+" ngày","không có tháng nào"];return mc(q,ans,w,"Số ngày trong các tháng không giống nhau; cần xem lịch để xác định.",level);
