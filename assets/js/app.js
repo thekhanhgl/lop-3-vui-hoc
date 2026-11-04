@@ -68,9 +68,15 @@
   function beginMathPractice(){
     const original=state.current.topic;
     // Mỗi lượt lấy ngẫu nhiên 10 câu, không lặp trong cùng lượt.
-    const pool=[...original.questions];
-    for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
-    state.current.topic={...original,questions:pool.slice(0,Math.min(10,pool.length))};
+    const shuffle=(items)=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+    // Mỗi lượt cân đối: 3 câu Nhận biết, 3 câu Thông hiểu, 4 câu Vận dụng.
+    const selected=[
+      ...shuffle(original.questions.filter(q=>q[4]==="NB")).slice(0,3),
+      ...shuffle(original.questions.filter(q=>q[4]==="TH")).slice(0,3),
+      ...shuffle(original.questions.filter(q=>q[4]==="VD")).slice(0,4)
+    ];
+    const pool=shuffle(selected);
+    state.current.topic={...original,questions:pool};
     state.index=0;state.correct=0;state.answered=false;renderQuestion();
   }
   function renderQuestion(){
