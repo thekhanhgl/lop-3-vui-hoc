@@ -168,10 +168,18 @@
         q="Số La Mã "+roman+" biểu thị số nào?";ans=v;w=[v+1,Math.max(1,v-1),v+2];ex="Đọc các kí hiệu I, V, X theo quy tắc ghép số La Mã đã học.";break;
       }
       case "perimeter":{
-        const l=4+n%12, h=3+(n*3)%9; q="Hình chữ nhật có chiều dài "+l+" cm, chiều rộng "+h+" cm. Chu vi là:";ans=2*(l+h);w=[l*h,l+h,2*l+h];ex="Chu vi = (dài + rộng) × 2 = ("+l+" + "+h+") × 2 = "+ans+" cm.";break;
+        const l=4+n%12, h=3+(n*3)%9;
+        if(n%3===0){const z=3+n%10;q="Hình vuông có cạnh "+z+" cm. Chu vi là:";ans=4*z;w=[z*z,2*z,4*z+2];ex="Chu vi hình vuông = cạnh × 4 = "+z+" × 4 = "+ans+" cm.";}
+        else if(n%3===1){const a=3+n%8,b=4+(n*2)%7,c=5+(n*3)%8;q="Tam giác có các cạnh "+a+" cm, "+b+" cm, "+c+" cm. Chu vi là:";ans=a+b+c;w=[a+b,b+c,a+b+c+2];ex="Chu vi = tổng độ dài ba cạnh = "+a+" + "+b+" + "+c+" = "+ans+" cm.";}
+        else {q="Hình chữ nhật có chiều dài "+l+" cm, chiều rộng "+h+" cm. Chu vi là:";ans=2*(l+h);w=[l*h,l+h,2*l+h];ex="Chu vi = (dài + rộng) × 2 = ("+l+" + "+h+") × 2 = "+ans+" cm.";}
+        break;
       }
       case "area": case "area-unit":{
-        const l=3+n%12,h=2+(n*3)%10;q="Hình chữ nhật có chiều dài "+l+" cm, chiều rộng "+h+" cm. Diện tích là:";ans=l*h;w=[2*(l+h),l+h,ans+l];ex="Diện tích = chiều dài × chiều rộng = "+l+" × "+h+" = "+ans+" cm².";break;
+        const l=3+n%12,h=2+(n*3)%10;
+        if(m[2]==="area-unit"&&n%2===0){q="Một hình gồm "+l+" hàng, mỗi hàng có "+h+" ô vuông đơn vị. Hình có bao nhiêu ô vuông đơn vị?";ans=l*h;w=[l+h,2*(l+h),ans+2];ex="Đếm theo hàng: "+l+" × "+h+" = "+ans+" ô vuông đơn vị.";}
+        else if(m[2]==="area-unit"){q="Hình vuông có cạnh 1 cm có diện tích là:";ans="1 cm²";w=["1 cm","2 cm²","10 cm²"];ex="Hình vuông cạnh 1 cm có diện tích 1 xăng-ti-mét vuông.";return mc(q,ans,w,ex,level);}
+        else {q="Hình chữ nhật có chiều dài "+l+" cm, chiều rộng "+h+" cm. Diện tích là:";ans=l*h;w=[2*(l+h),l+h,ans+l];ex="Diện tích = chiều dài × chiều rộng = "+l+" × "+h+" = "+ans+" cm².";}
+        break;
       }
       case "add4": case "add5": case "sub4": case "sub5":{
         const lim=m[2].includes("5")?70000:5500, p=1000+(n*317)%lim, r=200+(n*139)%Math.max(300,lim/5);
@@ -257,6 +265,8 @@
         else if(family==="review-addsub"){q="25 000 + 15 000 = ?";ans=40000;w=[30000,41000,45000];ex="25 000 + 15 000 = 40 000.";}
         else if(family==="review-mul5"){q="12 000 × 3 = ?";ans=36000;w=[24000,35000,3600];ex="12 000 × 3 = 36 000.";}
         else if(family==="review-mul"){const a=3+n%7,b=4+(n*3)%6; q=a+" × "+b+" = ?";ans=a*b;w=[ans+a,ans-b,ans+2];ex=a+" × "+b+" = "+ans+".";}
+        else if(family==="review1"){const a=120+n*7,b=35+n*3;if(n%4===0){q=(4+n%5)+" × "+(6+n%4)+" = ?";ans=(4+n%5)*(6+n%4);w=[ans+4,ans-4,ans+10];ex="Thực hiện phép nhân theo bảng nhân đã học.";}else if(n%4===1){q="Hình vuông cạnh "+(3+n%8)+" cm có chu vi là:";ans=4*(3+n%8);w=[ans+2,ans-2,(3+n%8)*(3+n%8)];ex="Chu vi hình vuông bằng cạnh nhân 4.";}else{q=fmt(a)+" + "+fmt(b)+" = ?";ans=a+b;w=[ans+10,ans-10,ans+100];ex=fmt(a)+" + "+fmt(b)+" = "+fmt(ans)+".";}}
+        else if(family==="review2"||family==="review-final"){const a=10000+n*113,b=2000+n*37;if(n%5===0){q="1 giờ bằng bao nhiêu phút?";ans=60;w=[30,100,24];ex="1 giờ = 60 phút.";}else if(n%5===1){q=fmt(a)+" + "+fmt(b)+" = ?";ans=a+b;w=[ans+100,ans-100,ans+1000];ex=fmt(a)+" + "+fmt(b)+" = "+fmt(ans)+".";}else if(n%5===2){q=fmt(a)+" − "+fmt(b)+" = ?";ans=a-b;w=[ans+100,ans-100,ans+1000];ex=fmt(a)+" − "+fmt(b)+" = "+fmt(ans)+".";}else if(n%5===3){q="Hình vuông có cạnh "+(5+n%8)+" cm. Diện tích là:";ans=(5+n%8)*(5+n%8);w=[4*(5+n%8),ans+2,ans-2];ex="Diện tích hình vuông bằng cạnh nhân cạnh.";}else{q="Một món hàng giá "+fmt(10000+n*1000)+" đồng. Mua 2 món như vậy hết:";ans=2*(10000+n*1000);w=[ans+1000,ans-1000,10000+n*1000];ex="Tổng tiền = giá một món × 2.";}}
         else {const a=120+n*7,b=35+n*3;q=fmt(a)+" + "+fmt(b)+" = ?";ans=a+b;w=[ans+10,ans-10,ans+100];ex=fmt(a)+" + "+fmt(b)+" = "+fmt(ans)+".";}
         break;
       }
