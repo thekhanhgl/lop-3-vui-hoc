@@ -21,3 +21,9 @@ Dự án được thiết kế theo hướng tích hợp ý tưởng học tập
 
 ## 4. Giấy phép của phần mã nguồn mới
 Các tệp HTML, CSS và JavaScript do dự án `lop-3-vui-hoc` tự biên soạn được phát hành theo MIT License ở tệp `LICENSE`. Giấy phép này không cấp lại quyền đối với các thương hiệu, nội dung hoặc tài nguyên bên ngoài được dẫn liên kết.
+
+## 5. Đối chiếu mục lục Toán 3 Kết nối tri thức
+- Tập 1: https://sgkvn.com/lop-3-9/ket-noi-tri-thuc-voi-cuoc-song-3/toan-3-tap-mot-1070.html
+- Tập 2: https://sgkvn.com/lop-3-9/ket-noi-tri-thuc-voi-cuoc-song-3/toan-3-tap-hai-1071.html
+- Chỉ sử dụng để đối chiếu tên bài và thứ tự bài học; không sao chép nguyên văn nội dung SGK, câu hỏi hoặc lời giải.
+- Ngân hàng câu hỏi, ví dụ và giải thích trong dự án được biên soạn mới, cần được rà soát chuyên môn trước khi sử dụng chính thức.
