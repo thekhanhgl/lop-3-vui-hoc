@@ -287,9 +287,55 @@
     statistics:["Bảng số liệu giúp ghi chép, đọc và so sánh thông tin thu thập được.","Đọc tên hàng, tên cột và đối chiếu đúng số liệu."],
     probability:["Một sự kiện có thể chắc chắn xảy ra, không thể xảy ra hoặc có thể xảy ra.","Dựa vào điều kiện của tình huống để nhận xét khả năng xảy ra."]
   };
+
+  Object.assign(descriptions,{
+    unknownmul:["Muốn tìm thừa số chưa biết, lấy tích chia cho thừa số đã biết; muốn tìm số bị chia, lấy thương nhân số chia; muốn tìm số chia, lấy số bị chia chia thương.","Dùng phép tính ngược để tìm thành phần chưa biết."],
+    division-remainder:["Trong phép chia có dư: số bị chia = số chia × thương + số dư; số dư luôn bé hơn số chia. Phép chia hết có số dư bằng 0.","Lấy số chia nhân thương rồi cộng số dư để kiểm tra."],
+    mult2:["Đặt tính thẳng cột; nhân từ hàng đơn vị, chú ý nhớ khi tích một hàng từ 10 trở lên.","Tách số có hai chữ số thành chục và đơn vị để tính hoặc đặt tính."],
+    div2:["Thực hiện chia lần lượt từ hàng chục đến hàng đơn vị; kiểm tra bằng phép nhân.","Thương nhân số chia phải bằng số bị chia nếu phép chia hết."],
+    mult3:["Nhân số có ba chữ số với số có một chữ số theo từng hàng, từ phải sang trái; nhớ đúng.","Ước lượng kết quả trước, sau đó đặt tính và kiểm tra."],
+    div3:["Chia số có ba chữ số cho số có một chữ số từ hàng cao nhất; mỗi lượt chia tìm một chữ số thương.","Thử lại bằng phép nhân thương với số chia."],
+    mult4:["Nhân số có bốn chữ số với số có một chữ số theo từng hàng; chú ý nhớ.","Đặt tính thẳng cột, tính từ hàng đơn vị."],
+    div4:["Chia số có bốn chữ số cho số có một chữ số theo thứ tự từ trái sang phải.","Kiểm tra thương bằng phép nhân ngược."],
+    mult5:["Nhân số có năm chữ số với số có một chữ số, thực hiện lần lượt từng hàng.","Chú ý nhớ và ghi đủ các chữ số của tích."],
+    div5:["Chia số có năm chữ số cho số có một chữ số từ trái sang phải.","Kiểm tra kết quả bằng thương nhân số chia."],
+    timesmore:["Muốn biết số lớn gấp mấy lần số bé, lấy số lớn chia cho số bé; muốn gấp một số lên nhiều lần, lấy số đó nhân số lần.","Phân biệt 'gấp lên' với 'thêm vào'."],
+    divideby:["Muốn giảm một số đi một số lần, lấy số đó chia cho số lần.","Phân biệt giảm đi một số lần với giảm đi một số đơn vị."],
+    midpoint:["Trung điểm của đoạn thẳng là điểm nằm giữa hai đầu mút và cách đều hai đầu mút.","Muốn tìm độ dài từ đầu mút đến trung điểm, lấy độ dài đoạn thẳng chia 2."],
+    circle:["Tâm là điểm chính giữa hình tròn; bán kính nối tâm với đường tròn; đường kính đi qua tâm và bằng hai lần bán kính.","Đường kính bằng hai lần bán kính."],
+    angle:["Góc được tạo bởi hai tia chung gốc; góc vuông có dạng góc ở đỉnh hình vuông hoặc hình chữ nhật.","Dùng ê ke để nhận biết góc vuông."],
+    polygon:["Hình tam giác có 3 cạnh; hình tứ giác có 4 cạnh. Hình chữ nhật có 4 góc vuông; hình vuông có 4 cạnh bằng nhau và 4 góc vuông.","Quan sát số cạnh, số đỉnh và góc của hình."],
+    draw:["Dùng ê ke để vẽ góc vuông; dùng compa để vẽ đường tròn; dùng thước để đo và vẽ đoạn thẳng.","Đặt dụng cụ đúng vị trí, giữ chắc khi vẽ."],
+    solid:["Khối lập phương có 6 mặt hình vuông bằng nhau; khối hộp chữ nhật có 6 mặt hình chữ nhật.","Phân biệt khối hình qua hình dạng các mặt."],
+    "unit-mm":["Mi-li-mét là đơn vị đo độ dài; 1 cm = 10 mm.","Đổi đơn vị cần nhân hoặc chia cho 10."],
+    "unit-g":["Gam là đơn vị đo khối lượng; có thể dùng cân để đo khối lượng vật.","Ghi đúng đơn vị g khi đọc kết quả cân."],
+    "unit-ml":["Mi-li-lít là đơn vị đo dung tích; dùng ca hoặc bình chia vạch để đo chất lỏng.","Đọc số chỉ theo vạch chia và ghi đơn vị ml."],
+    temperature:["Nhiệt độ cho biết mức nóng, lạnh; thường đo bằng độ C (°C) và nhiệt kế.","Đọc đúng số chỉ và đơn vị độ C."],
+    "unit-mix":["Các đơn vị mm, g, ml và °C lần lượt dùng để đo độ dài, khối lượng, dung tích và nhiệt độ.","Chọn đúng đơn vị và dụng cụ đo theo đại lượng."],
+    twostep:["Bài toán giải bằng hai bước tính cần xác định việc phải làm trước, sau đó mới thực hiện bước tiếp theo.","Đọc đề, tóm tắt dữ kiện, xác định thứ tự các phép tính."],
+    expression:["Biểu thức có thể gồm nhiều phép tính; thực hiện nhân, chia trước rồi cộng, trừ sau; phép tính cùng thứ tự thực hiện từ trái sang phải.","Tính theo đúng thứ tự, không làm tùy ý từ trái sang phải."],
+    roman:["Chữ số La Mã thường gặp gồm I, V, X; ghép các kí hiệu theo quy tắc để biểu thị số.","Nhận biết giá trị I = 1, V = 5, X = 10."],
+    "area-unit":["Diện tích là phần mặt phẳng hình chiếm; xăng-ti-mét vuông (cm²) là diện tích hình vuông cạnh 1 cm.","Đếm số ô vuông đơn vị để xác định diện tích."],
+    perimeter:["Chu vi hình là tổng độ dài các cạnh; hình chữ nhật có chu vi bằng tổng chiều dài và chiều rộng nhân 2; hình vuông bằng cạnh nhân 4.","Cộng đủ độ dài các cạnh, không nhầm chu vi với diện tích."],
+    time:["1 giờ = 60 phút; đọc giờ và phút trên đồng hồ theo vị trí kim giờ, kim phút.","Khi cộng phút đủ 60, đổi thành 1 giờ."],
+    calendar:["Một năm có 12 tháng; số ngày mỗi tháng có thể là 28, 29, 30 hoặc 31 ngày.","Dùng lịch để xác định ngày, thứ và số ngày trong tháng."],
+    money:["Tiền Việt Nam có đơn vị là đồng; tính tiền mua hàng bằng cách cộng giá và tính tiền thừa bằng phép trừ.","Viết đủ đơn vị đồng và kiểm tra tiền thừa."],
+    statistics:["Bảng số liệu dùng để ghi lại kết quả thu thập; cần đọc đúng tên đối tượng và số liệu tương ứng.","So sánh số liệu để tìm nhiều nhất, ít nhất hoặc tổng."],
+    probability:["Sự kiện có thể chắc chắn xảy ra, không thể xảy ra hoặc có thể xảy ra tùy tình huống.","Không nhầm 'có thể' với 'chắc chắn'."],
+    review1:["Ôn tập kết hợp đọc số, cộng trừ, nhân chia, hình học và đo lường đã học ở Tập 1.","Xác định dạng toán trước khi chọn phép tính."],
+    review2:["Ôn tập kết hợp số đến 100 000, phép tính, hình học, đo lường, thời gian, tiền và thống kê.","Đọc kĩ đơn vị, thứ tự phép tính và dữ kiện."],
+    "review-mul":["Ôn tập bảng nhân, bảng chia và phép nhân chia trong phạm vi 1 000.","Dùng phép nhân để kiểm tra phép chia."],
+    "review-geometry":["Ôn tập hình phẳng, hình khối, chu vi, diện tích và các đơn vị đo.","Phân biệt đặc điểm hình và công thức đo lường."],
+    "review-geometry2":["Ôn tập chu vi, diện tích, độ dài, khối lượng, dung tích và nhiệt độ.","Chọn đúng công thức, đơn vị đo."],
+    "review-number":["Ôn tập cấu tạo, đọc viết, so sánh và làm tròn số đến 100 000.","So sánh từ hàng cao nhất."],
+    "review-addsub":["Ôn tập cộng, trừ trong phạm vi 100 000; đặt tính thẳng cột và kiểm tra bằng phép tính ngược.","Ước lượng kết quả trước khi tính."],
+    "review-mul5":["Ôn tập nhân, chia số có nhiều chữ số với số có một chữ số.","Thực hiện theo từng hàng và thử lại."],
+    "review-stats":["Ôn tập đọc bảng số liệu và nhận xét khả năng xảy ra của sự kiện.","Đọc đúng hàng, cột và dữ kiện."],
+    "review-final":["Ôn tập tổng hợp kiến thức Toán 3: số học, phép tính, hình học, đo lường, thời gian, tiền và thống kê.","Làm từng bước, kiểm tra kết quả và đơn vị."]
+  });
   const titles={};
   lessons.forEach(m=>{
-    const n=m[0], family=m[2], desc=descriptions[family]||descriptions[family.startsWith("review")?"geometry":"unknown"];
+    const n=m[0], family=m[2], desc=descriptions[family]||descriptions.unknown;
     const questions=[];
     for(let i=0;i<40;i++){const level=i<10?"NB":i<20?"TH":"VD";questions.push(build(m,i,level));}
     const first=questions[0];
