@@ -80,6 +80,82 @@ window.MATH_BANK = {
         ["Tìm số lớn nhất có ba chữ số mà tổng ba chữ số bằng 10:",["910","901","820","811"],0,"Để số lớn nhất, chọn hàng trăm 9; hai chữ số còn lại có tổng 1. Chọn hàng chục 1, hàng đơn vị 0 được 910.","VD"],
         ["Số nào lớn hơn 598 đúng 1 đơn vị?",["597","598","599","600"],3,"598 + 1 = 599. Phương án đúng là 599.","VD"]
       ]
+    },
+    {
+      id:"math-bai-02",
+      lessonNo:2,
+      book:"Tập 1",
+      title:"Bài 2. Ôn tập phép cộng, phép trừ trong phạm vi 1 000",
+      icon:"➕",
+      summary:{
+        goals:[
+          "Thực hiện được phép cộng, phép trừ các số trong phạm vi 1 000.",
+          "Biết đặt tính rồi tính, chú ý thẳng cột các hàng.",
+          "Vận dụng phép cộng, phép trừ để giải bài toán thực tế.",
+          "Biết kiểm tra kết quả bằng phép tính ngược hoặc ước lượng hợp lí."
+        ],
+        knowledge:[
+          {title:"Đặt tính cộng",detail:"Viết các chữ số cùng hàng thẳng cột: đơn vị dưới đơn vị, chục dưới chục, trăm dưới trăm. Cộng từ phải sang trái; nếu tổng một hàng từ 10 trở lên thì nhớ 1 sang hàng liền trước."},
+          {title:"Đặt tính trừ",detail:"Viết các chữ số cùng hàng thẳng cột. Trừ từ phải sang trái; nếu chữ số ở hàng trên nhỏ hơn chữ số ở hàng dưới thì mượn 1 ở hàng liền trước."},
+          {title:"Tính nhẩm",detail:"Có thể tách số thành trăm, chục, đơn vị hoặc cộng/trừ số tròn chục, tròn trăm trước rồi điều chỉnh."},
+          {title:"Kiểm tra phép cộng",detail:"Lấy tổng trừ đi một số hạng, nếu được số hạng còn lại thì phép cộng có thể đúng."},
+          {title:"Kiểm tra phép trừ",detail:"Lấy hiệu cộng với số trừ, nếu được số bị trừ thì phép trừ có thể đúng."}
+        ],
+        examples:[
+          {question:"Tính 268 + 157.",answer:"425",explain:"268 + 100 = 368; 368 + 57 = 425. Khi đặt tính, cộng lần lượt từ hàng đơn vị."},
+          {question:"Tính 602 − 278.",answer:"324",explain:"602 − 200 = 402; 402 − 78 = 324. Có thể kiểm tra: 324 + 278 = 602."}
+        ],
+        commonMistakes:[
+          "Đặt các chữ số không thẳng cột theo hàng.",
+          "Quên nhớ khi cộng hoặc quên giảm 1 ở hàng vừa mượn khi trừ.",
+          "Không chú ý chữ số 0 ở giữa số, ví dụ 602.",
+          "Chỉ tính một bước trong bài toán có hai bước tính."
+        ],
+        tip:"Sau khi tính, hãy kiểm tra bằng phép tính ngược: cộng thì thử bằng trừ; trừ thì thử bằng cộng."
+      },
+      questions:[
+        ["235 + 142 = ?",["367","377","387","397"],1,"235 + 142 = 377.","NB"],
+        ["600 − 275 = ?",["315","325","335","345"],1,"600 − 275 = 325.","NB"],
+        ["408 + 96 = ?",["494","504","514","524"],1,"408 + 96 = 504.","NB"],
+        ["721 − 308 = ?",["403","413","423","433"],1,"721 − 308 = 413.","NB"],
+        ["356 + 0 = ?",["0","350","356","366"],2,"Cộng với 0 thì giữ nguyên số đó.","NB"],
+        ["900 − 0 = ?",["0","90","900","910"],2,"Trừ đi 0 thì giữ nguyên số bị trừ.","NB"],
+        ["430 + 50 = ?",["435","470","480","530"],2,"430 + 50 = 480.","NB"],
+        ["670 − 40 = ?",["620","630","640","660"],1,"670 − 40 = 630.","NB"],
+        ["125 + 200 = ?",["225","305","325","425"],2,"125 + 200 = 325.","NB"],
+        ["999 − 1 = ?",["988","989","998","1 000"],2,"999 − 1 = 998.","NB"],
+
+        ["248 + 137 = ?",["375","385","395","405"],1,"248 + 137 = 385.","TH"],
+        ["503 − 276 = ?",["217","227","237","327"],1,"503 − 276 = 227.","TH"],
+        ["365 + □ = 500. Số thích hợp điền vào ô trống là:",["125","135","145","155"],1,"500 − 365 = 135.","TH"],
+        ["□ − 125 = 375. Số thích hợp điền vào ô trống là:",["400","450","500","525"],2,"375 + 125 = 500.","TH"],
+        ["240 + 160 = ?",["300","390","400","410"],2,"240 + 160 = 400.","TH"],
+        ["800 − 345 = ?",["445","455","465","555"],1,"800 − 345 = 455.","TH"],
+        ["478 + □ = 1 000. Số thích hợp là:",["512","522","532","542"],1,"1 000 − 478 = 522.","TH"],
+        ["1 000 − □ = 685. Số thích hợp là:",["305","315","325","415"],1,"1 000 − 685 = 315.","TH"],
+        ["Phép tính nào có kết quả bằng 350?",["600 − 250","600 − 350","250 + 150","450 − 50"],0,"600 − 250 = 350.","TH"],
+        ["Để kiểm tra phép tính 725 − 318 = 407, ta thực hiện:",["725 + 407","407 + 318","725 − 407","318 − 407"],1,"Lấy hiệu cộng số trừ: 407 + 318 = 725.","TH"],
+
+        ["Lớp 3A quyên góp 245 quyển vở, lớp 3B quyên góp 187 quyển. Cả hai lớp quyên góp được:",["422 quyển","432 quyển","442 quyển","452 quyển"],1,"245 + 187 = 432 quyển.","VD"],
+        ["Thư viện có 650 quyển truyện, học sinh mượn 275 quyển. Thư viện còn:",["365 quyển","375 quyển","385 quyển","425 quyển"],1,"650 − 275 = 375 quyển.","VD"],
+        ["Mỗi thùng có 125 chiếc bút. Ba thùng có tất cả:",["350 chiếc","365 chiếc","375 chiếc","385 chiếc"],2,"125 + 125 + 125 = 375 chiếc.","VD"],
+        ["Trên xe có 48 hành khách. Đến bến, 17 người xuống và 12 người lên. Trên xe lúc này có:",["41 người","42 người","43 người","45 người"],2,"48 − 17 + 12 = 43 hành khách.","VD"],
+        ["Một cửa hàng có 405 kg gạo, nhập thêm một số gạo để được 700 kg. Cửa hàng đã nhập thêm:",["285 kg","295 kg","305 kg","315 kg"],1,"700 − 405 = 295 kg.","VD"],
+        ["Hiệu của 823 và 476 là:",["337","347","357","367"],1,"823 − 476 = 347.","VD"],
+        ["Kho có 900 quả trứng. Buổi sáng bán 385 quả, buổi chiều bán 276 quả. Kho còn:",["229 quả","239 quả","249 quả","261 quả"],1,"900 − 385 − 276 = 239 quả.","VD"],
+        ["Hai lớp trồng được 640 cây. Lớp thứ nhất trồng 285 cây. Lớp thứ hai trồng:",["345 cây","355 cây","365 cây","375 cây"],1,"640 − 285 = 355 cây.","VD"],
+        ["Ba tổ thu gom giấy vụn lần lượt được 128 kg, 136 kg và 145 kg. Cả ba tổ thu gom được:",["399 kg","409 kg","419 kg","429 kg"],1,"128 + 136 + 145 = 409 kg.","VD"],
+        ["Một cửa hàng có 720 kg gạo. Buổi sáng bán 185 kg, buổi chiều bán 236 kg. Cửa hàng còn:",["289 kg","299 kg","309 kg","319 kg"],1,"720 − 185 − 236 = 299 kg.","VD"],
+        ["Một số là 420. Tăng số đó thêm 175 rồi giảm đi 89, ta được:",["496","506","516","526"],1,"420 + 175 − 89 = 506.","VD"],
+        ["Tính 398 + 207 − 155.",["440","450","460","470"],1,"398 + 207 = 605; 605 − 155 = 450.","VD"],
+        ["Tính 1 000 − 498 + 127.",["619","629","639","649"],1,"1 000 − 498 = 502; 502 + 127 = 629.","VD"],
+        ["Cách tính nhanh 532 − 198 là:",["532 − 200 − 2","532 − 200 + 2","532 − 100 + 98","532 − 190 − 8"],1,"198 = 200 − 2 nên 532 − 198 = 532 − 200 + 2 = 334.","VD"],
+        ["Tổng của số lớn nhất có ba chữ số và 1 là:",["999","1 000","1 001","998"],1,"Số lớn nhất có ba chữ số là 999; 999 + 1 = 1 000.","VD"],
+        ["Một cửa hàng có 835 chiếc khẩu trang, đã bán 268 chiếc. Sau đó nhập thêm 125 chiếc. Cửa hàng có:",["682 chiếc","692 chiếc","702 chiếc","712 chiếc"],1,"835 − 268 + 125 = 692 chiếc.","VD"],
+        ["Tổng hai số là 750. Nếu một số là 368 thì số còn lại là:",["372","382","392","402"],1,"750 − 368 = 382.","VD"],
+        ["Một đội phải trồng 1 000 cây. Buổi sáng trồng 325 cây, buổi chiều trồng 418 cây. Đội còn phải trồng:",["247 cây","257 cây","267 cây","277 cây"],1,"1 000 − 325 − 418 = 257 cây.","VD"],
+        ["Một cửa hàng có 560 lít dầu, bán lần thứ nhất 175 lít và lần thứ hai 185 lít. Số dầu còn lại là:",["190 lít","200 lít","210 lít","220 lít"],1,"560 − 175 − 185 = 200 lít.","VD"]
+      ]
     }
   ]
 };
