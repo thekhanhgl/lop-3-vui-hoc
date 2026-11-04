@@ -78,7 +78,7 @@ window.MATH_BANK = {
         ["Sắp xếp các số 609, 690, 906, 960 theo thứ tự từ bé đến lớn:",["609, 690, 906, 960","690, 609, 906, 960","960, 906, 690, 609","609, 906, 690, 960"],0,"So sánh hàng trăm trước, rồi hàng chục: 609 < 690 < 906 < 960.","VD"],
         ["Một số có ba chữ số. Nếu đổi chỗ chữ số hàng trăm và hàng đơn vị của số 316 thì được số nào?",["613","631","136","361"],0,"Đổi vị trí 3 và 6, giữ nguyên hàng chục 1, ta được 613.","VD"],
         ["Tìm số lớn nhất có ba chữ số mà tổng ba chữ số bằng 10:",["910","901","820","811"],0,"Để số lớn nhất, chọn hàng trăm 9; hai chữ số còn lại có tổng 1. Chọn hàng chục 1, hàng đơn vị 0 được 910.","VD"],
-        ["Số nào lớn hơn 598 đúng 1 đơn vị?",["597","598","599","600"],3,"598 + 1 = 599. Phương án đúng là 599.","VD"]
+        ["Số nào lớn hơn 598 đúng 1 đơn vị?",["597","598","599","600"],2,"598 + 1 = 599. Phương án đúng là 599.","VD"]
       ]
     },
     {
@@ -154,7 +154,8 @@ window.MATH_BANK = {
         ["Một cửa hàng có 835 chiếc khẩu trang, đã bán 268 chiếc. Sau đó nhập thêm 125 chiếc. Cửa hàng có:",["682 chiếc","692 chiếc","702 chiếc","712 chiếc"],1,"835 − 268 + 125 = 692 chiếc.","VD"],
         ["Tổng hai số là 750. Nếu một số là 368 thì số còn lại là:",["372","382","392","402"],1,"750 − 368 = 382.","VD"],
         ["Một đội phải trồng 1 000 cây. Buổi sáng trồng 325 cây, buổi chiều trồng 418 cây. Đội còn phải trồng:",["247 cây","257 cây","267 cây","277 cây"],1,"1 000 − 325 − 418 = 257 cây.","VD"],
-        ["Một cửa hàng có 560 lít dầu, bán lần thứ nhất 175 lít và lần thứ hai 185 lít. Số dầu còn lại là:",["190 lít","200 lít","210 lít","220 lít"],1,"560 − 175 − 185 = 200 lít.","VD"]
+        ["Một cửa hàng có 560 lít dầu, bán lần thứ nhất 175 lít và lần thứ hai 185 lít. Số dầu còn lại là:",["190 lít","200 lít","210 lít","220 lít"],1,"560 − 175 − 185 = 200 lít.","VD"],
+        ["Một trường có 690 quyển sách ở thư viện. Nhà trường tặng học sinh 245 quyển rồi được bổ sung thêm 180 quyển. Thư viện hiện có:",["615 quyển","625 quyển","635 quyển","645 quyển"],1,"690 − 245 + 180 = 625 quyển.","VD"]
       ]
     }
   ]
