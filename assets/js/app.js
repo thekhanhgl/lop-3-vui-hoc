@@ -45,7 +45,7 @@
   function findTopic(id){ for(const [key,s] of Object.entries(data)){const t=s.topics.find(x=>x.id===id);if(t)return {key,subject:s,topic:t};} }
   function startTopic(id){
     const found=findTopic(id); if(!found)return;
-    state.current=found; state.lastTopic=id; state.index=0; state.correct=0; state.answered=false; state.flashIndex=0;
+    state.current=found; state.lastTopic=id; state.index=0; state.correct=0; state.answered=false; state.flashIndex=0; state.sessionQuestions=null;
     if(found.topic.summary){ renderLessonIntro(); return; }
     if(found.topic.words) renderFlashcard(); else renderQuestion();
   }
@@ -76,19 +76,19 @@
       ...shuffle(original.questions.filter(q=>q[4]==="VD")).slice(0,4)
     ];
     const pool=shuffle(selected);
-    state.current.topic={...original,questions:pool};
+    state.sessionQuestions=pool;
     state.index=0;state.correct=0;state.answered=false;renderQuestion();
   }
   function renderQuestion(){
-    const t=state.current.topic, q=t.questions[state.index]; state.answered=false;
+    const t=state.current.topic, questions=state.sessionQuestions||t.questions, q=questions[state.index]; state.answered=false;
     $("#dialogContent").innerHTML=`<div class="dialog-body">
-      <div class="quiz-top"><span>Câu ${state.index+1}/${t.questions.length}</span><span>⭐ ${state.correct} câu đúng</span></div>
-      <div class="quiz-track"><span style="width:${state.index/t.questions.length*100}%"></span></div>
+      <div class="quiz-top"><span>Câu ${state.index+1}/${questions.length}</span><span>⭐ ${state.correct} câu đúng</span></div>
+      <div class="quiz-track"><span style="width:${state.index/questions.length*100}%"></span></div>
       <div class="question-kicker">${state.current.subject.title.toUpperCase()} · THỬ THÁCH</div>
       <h2 class="question-text">${q[0]}</h2>
       <div class="answer-grid">${q[1].map((a,i)=>`<button class="answer-btn" data-answer="${i}">${String.fromCharCode(65+i)}. ${a}</button>`).join("")}</div>
       <div id="feedback" class="feedback"></div>
-      <div class="quiz-actions"><button class="btn btn-soft" id="quitQuiz">Thoát</button><button class="btn btn-primary" id="nextQuestion" disabled>${state.index===t.questions.length-1?"Xem kết quả":"Câu tiếp theo →"}</button></div>
+      <div class="quiz-actions"><button class="btn btn-soft" id="quitQuiz">Thoát</button><button class="btn btn-primary" id="nextQuestion" disabled>${state.index===questions.length-1?"Xem kết quả":"Câu tiếp theo →"}</button></div>
     </div>`;
     $$("#dialogContent [data-answer]").forEach(btn=>btn.addEventListener("click",()=>answer(Number(btn.dataset.answer))));
     $("#nextQuestion").addEventListener("click",next);
@@ -97,17 +97,18 @@
   const $$=(s,root=document)=>Array.from(root.querySelectorAll(s));
   function answer(n){
     if(state.answered)return; state.answered=true;
-    const q=state.current.topic.questions[state.index], buttons=$$("#dialogContent [data-answer]");
+    const q=(state.sessionQuestions||state.current.topic.questions)[state.index], buttons=$("#dialogContent [data-answer]");
     buttons.forEach((b,i)=>{b.disabled=true;if(i===q[2])b.classList.add("correct");if(i===n&&i!==q[2])b.classList.add("wrong");});
     const ok=n===q[2];if(ok)state.correct++;
     $("#feedback").textContent=(ok?"🎉 Chính xác! ":"💪 Cố gắng nhé! ")+q[3];
     $("#nextQuestion").disabled=false;
   }
   function next(){
-    const t=state.current.topic;
-    if(state.index<t.questions.length-1){state.index++;renderQuestion();return;}
-    const earned=Math.max(2,Math.round(state.correct/t.questions.length*10));
-    finish(t,earned,`${state.correct}/${t.questions.length} câu đúng`);
+    const t=state.current.topic, questions=state.sessionQuestions||t.questions;
+    if(state.index<questions.length-1){state.index++;renderQuestion();return;}
+    const earned=Math.max(2,Math.round(state.correct/questions.length*10));
+    finish(t,earned,`${state.correct}/${questions.length} câu đúng`);
+    state.sessionQuestions=null;
   }
   function renderFlashcard(){
     const t=state.current.topic, w=t.words[state.flashIndex];
